@@ -1,5 +1,5 @@
 // swap first and last
-const example = () => {
+example = () => {
     let arr = [1,2,3,4,5];
     // initlaize temp at first
     let temp = arr[0]
@@ -11,43 +11,40 @@ const example = () => {
     console.log(arr)
 }
 
-const shiftleft = ()=> {
+shiftleft = () => {
     let arr = [1,2,3,4,5]
     // initialize a temp of first element
     let temp = arr[0]
     // forward loop starting at arr[1]
-    for (let i=1; i < arr.length; i++){
+    for (let i=1; i < arr.length; i++)
         // LEFT ELEMENT = next element
         arr[i-1] = arr[i]
-    }
     // set last element to temp
     arr[arr.length-1] = temp
     console.log(arr)
 }
 
-const shiftRight = () => {
+shiftRight = () => {
     let arr = [1,2,3,4,5]
     // intitalize temp to last element
     let temp = arr[arr.length-1]
     // backwards loop starts at end, goes to first, goes backwards
-    for (let i=arr.length-1; i>0; i--){
+    for (let i=arr.length-1; i>0; i--)
         // RIGHT ELEMENT = previous
         arr[i] = arr[i-1];
-    }
     // reintigrate temp
     arr[0] = temp;
     console.log(arr)
 }
 
 // ADD FIRST, shift right
-const push = (arr, num) => {
+push = (arr, num) => {
     // intitalize temp to last element
     let temp = arr[arr.length-1]
     // backwards loop starts at end, goes to first, goes backwards
-    for (let i=arr.length-1; i > 0; i--){
+    for (let i=arr.length-1; i > 0; i--)
         // RIGHT ELEMENT = previous
         arr[i] = arr[i-1]
-    }
     // add first
     arr[0]=num
     // make last last
@@ -58,12 +55,11 @@ const push = (arr, num) => {
 }
 
 // REMOVE FIRST: shift left, shorten arr
-const pop = (arr) =>{
+pop = (arr) =>{
     // forward loop starting at arr[1]
-    for (let i=1; i<arr.length; i++){
+    for (let i=1; i<arr.length; i++)
         // LEFT ELEMENT = next
         arr[i-1] = arr[i]
-    }
     //decrease arr length
     arr.length = arr.length-1
 
@@ -73,12 +69,11 @@ const pop = (arr) =>{
 }
 
 // INSERT AT: shift right, insert number
-const insertAt = (arr, index, e) => {
+insertAt = (arr, index, e) => {
     // iterate backwards, from length, to index to be changed
-    for (let i=arr.length; i >= index; i--){
+    for (let i=arr.length; i >= index; i--)
         // RIGHT element = previous
         arr[i] = arr[i-1];
-    }
     // change the element at index
     arr[index] = e
 
@@ -86,7 +81,7 @@ const insertAt = (arr, index, e) => {
     console.log(arr)
 }
 
-const swapPairs = (arr) => {
+swapPairs = (arr) => {
     if (arr.length % 2 ==0){
         // save last half to temp
         let temp = arr.splice(arr.length / 2)
@@ -124,7 +119,7 @@ const swapPairs = (arr) => {
 }
 
 // equivalent to removeAt(arr,0)
-const removeAt = (arr, index) => {
+removeAt = (arr, index) => {
     for (let i=0; i < arr.length; i++){
         if (i===index){
             // shift left @ index to be removed
@@ -143,7 +138,7 @@ const removeAt = (arr, index) => {
 }
 
 // remove dups in sorted array
-var removeDupes = function (arr) {
+removeDupes = (arr) => {
     let same = 0;
     let different = 0;
 
