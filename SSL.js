@@ -63,6 +63,26 @@ class SLL {
     getFront(){
         return (this.head.val !== null) ? this.head.val : null
     }
+
+    /**************************
+     *    4) DISPLAY ALL      *
+     * Create display() that  *
+     *   uses a while loop    *
+     *    and a runner to     *
+     *    return a string     *
+     * containing all values. *
+     **************************/
+    display(){
+        var str = ''
+        if (this.head == null) return str
+        str += this.head.val
+        var runner = this.head.next
+        while (runner != null) {
+            str += ', ' + runner.val
+            runner = runner.next
+        }
+        return str
+    }
 }
 
 // ADD
@@ -70,9 +90,11 @@ SLL1 = new SLL()
 console.log(SLL1)
 console.log( SLL1.addFront(18).head )
 console.log( SLL1.addFront(5).head )
-console.log( SLL1.addFront(73) )  
-console.log(SLL1.head)
+console.log( SLL1.addFront(73).head )  
 
 // // REMOVE
-console.log( SLL1.removeFront() )  
+SLL1.removeFront()
+
+// DISPLAY
 console.log( SLL1.getFront() )
+console.log( SLL1.display() ) 
