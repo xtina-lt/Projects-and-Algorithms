@@ -1,3 +1,47 @@
+/************************
+ *        MODULO        *
+ *      -remainder      * 
+ ************************/
+// https://www.pinterest.com/pin/567172146822809864/
+// paramseconds past 0000
+clockAngle = num => {
+    sec = Math.floor(num % 60)
+    min = Math.floor( (num / 60) % 60 )
+    hr = Math.floor( (num /(60*60)) % 12 )
+
+    circle = 360
+    anglePerHr = circle / 12
+    anglePerMin = circle / 60
+
+    hrHand = hr * anglePerHr
+    minHand = min * anglePerMin
+
+return `Seconds pased 0000: ${num}
+Time: ${hr}:${sec}:${min}
+Hour hand: ${hrHand}
+Minute hand: ${minHand}
+`
+}
+console.log( clockAngle( 119730 ) )
+console.log( clockAngle( 3600 ) )
+
+
+
+isPrime = num => {
+    result = false
+    // prime is divisibale by itself and one only
+    if( (num % num === 0) && (num % 1===0)
+    // if divisible by anything lese it is false
+    // hence if it is divisbly by 2 or 3 it is not prime 
+    && !((num % 2===0) || (num % 3===0))) {
+        result = true;
+    }
+    return result
+}
+
+console.log( isPrime(6) )
+
+
 // messyMath(num) that will return the following sum: 
 // add all integers from 0 up to the given num, 
 // except for the following special cases of our count value
@@ -47,6 +91,9 @@ twelveBarBlues = () => {
 }
 // twelveBarBlues()
 
+
+
+
 /**************************
  *        RECURSION       *
  *  using the same method *
@@ -82,44 +129,3 @@ sumToOne = str => {
 }
 
 // console.log( sumToOne(928) )
-
-
-// https://www.pinterest.com/pin/567172146822809864/
-// paramseconds past 0000
-clockAngle = num => {
-    sec = Math.floor(num % 60)
-    min = Math.floor( (num / 60) % 60 )
-    hr = Math.floor( (num /(60*60)) % 12 )
-
-    circle = 360
-    anglePerHr = circle / 12
-    anglePerMin = circle / 60
-
-    hrHand = hr * anglePerHr
-    minHand = min * anglePerMin
-
-return `Seconds pased 0000: ${num}
-Time: ${hr}:${sec}:${min}
-Hour hand: ${hrHand}
-Minute hand: ${minHand}
-`
-}
-
-console.log( clockAngle( 119730 ) )
-console.log( clockAngle( 3600 ) )
-
-
-
-isPrime = num => {
-    result = false
-    // prime is divisibale by itself and one only
-    if( (num % num === 0) && (num % 1===0)
-    // if divisible by anything lese it is false
-    // hence if it is divisbly by 2 or 3 it is not prime 
-    && !((num % 2===0) || (num % 3===0))) {
-        result = true;
-    }
-    return result
-}
-
-console.log( isPrime(6) )
